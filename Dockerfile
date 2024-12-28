@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN husky install
+RUN npm install
 
 COPY . .
 
