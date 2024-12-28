@@ -4,11 +4,11 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN husky install
 
 COPY . .
 
-RUN npm run build
+RUN next build
 
 FROM node:18-slim
 
@@ -18,4 +18,4 @@ COPY --from=build /app ./
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["next", "start"]
