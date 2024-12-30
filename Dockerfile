@@ -4,11 +4,11 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm run build
+RUN npm install
 
 COPY . .
 
-RUN next build
+RUN npm run build
 
 FROM node:18-slim
 
